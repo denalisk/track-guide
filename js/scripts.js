@@ -1,14 +1,27 @@
-var valueAdd = function(track, score, newVal) {
+var valueAdd = function(selectedOption, value) {
   // adds a value to the score for a given track
-  score += newVal;
+  if ($(selectedOption).hasClass("frontbackend")) {
+    frontbackendTrack += value;
+  }
+  else if ($(selectedOption).hasClass("companySize")) {
+    companySizeTrack += value;
+  }
+  else if ($(selectedOption).hasClass("mobile")) {
+    mobileTrack += value;
+  }
 
 }
+
+var mobileTrack = 0;
+var frontbackendTrack = 0;
+var companySizeTrack = 0;
+var experienceTrack = 0;
 
 
 
 
 $(document).ready(function() {
-  $(".question-2").show();
+  $(".question-3").show();
 
   var selectedOption = "blank";
   var prevOption = $(".info-row");
@@ -24,8 +37,13 @@ $(document).ready(function() {
 
   $(".next-button").click(function() {
     // this function adds the selectedOption to the value recorder
-    var value = selectedOption.val();
+    var value = parseInt(selectedOption.val());
+    valueAdd(selectedOption, value);
     console.log(value);
+    console.log(experienceTrack);
+    console.log(mobileTrack);
+    console.log(companySizeTrack);
+    console.log(frontbackendTrack);
   });
 
   $(".next-button").click(function() {
