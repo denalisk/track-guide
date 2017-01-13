@@ -9,8 +9,11 @@ var valueAdd = function(selectedOption, value) {
   else if ($(selectedOption).hasClass("mobile")) {
     mobileTrack += value;
   }
+  else {
+    experienceTrack += value;
+  }
 
-}
+};
 
 var mobileTrack = 0;
 var frontbackendTrack = 0;
@@ -21,7 +24,7 @@ var experienceTrack = 0;
 
 
 $(document).ready(function() {
-  $(".question-3").show();
+  $(".intro").show();
 
   var selectedOption = "blank";
   var prevOption = $(".info-row");
@@ -35,19 +38,26 @@ $(document).ready(function() {
 
   });
 
-  $(".next-button").click(function() {
+  $(".next-option-button").click(function() {
     // this function adds the selectedOption to the value recorder
     var value = parseInt(selectedOption.val());
     valueAdd(selectedOption, value);
     console.log(value);
-    console.log(experienceTrack);
-    console.log(mobileTrack);
-    console.log(companySizeTrack);
-    console.log(frontbackendTrack);
+    console.log("experience " + experienceTrack);
+    console.log("mobile " + mobileTrack);
+    console.log("company size " + companySizeTrack);
+    console.log("front or back end " + frontbackendTrack);
   });
 
   $(".next-button").click(function() {
-    // this button hides the current page and shows the next one
+    // this button hides the current page and shows the next one, for options
+    var currentPage = $(this).parent().parent();
+    currentPage.hide();
+    currentPage.next().show();
+  });
+
+  $(".next-option-button").click(function() {
+    // this button hides the current page and shows the next one, for options
     var currentPage = $(this).parent().parent();
     var value = selectedOption.val();
     currentPage.hide();
