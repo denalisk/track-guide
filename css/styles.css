@@ -5,3 +5,12 @@
 .info {
   display: none;
 }
+
+.info-button {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.info-button:hover {
+  cursor: pointer;
+}
