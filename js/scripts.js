@@ -20,14 +20,12 @@ var frontbackendTrack = 0;
 var companySizeTrack = 0;
 var experienceTrack = 0;
 
-
-
-
 $(document).ready(function() {
-  $(".intro").show();
+  $(".question-2").show();
 
-  var selectedOption = "blank";
+  var selectedOption = "placeholder";
   var prevOption = $(".info-row");
+  var pickedOne = false;
 
   $(".question-1").submit(function(event) {
     // this function opens the next page from the radio button page
@@ -49,28 +47,33 @@ $(document).ready(function() {
     selectedOption.addClass("option-select");
     prevOption.removeClass("option-select");
     prevOption = selectedOption;
+    pickedOne = true;
   });
 
   $(".next-option-button").click(function() {
     // this function adds the selectedOption to the value recorder
-    var value = parseInt(selectedOption.val());
-    valueAdd(selectedOption, value);
-    console.log(value);
-    console.log("experience " + experienceTrack);
-    console.log("mobile " + mobileTrack);
-    console.log("company size " + companySizeTrack);
-    console.log("front or back end " + frontbackendTrack);
-  });
-
-  $(".next-button").click(function() {
-    // this button hides the current page and shows the next one, for options
-    var currentPage = $(this).parent().parent();
-    currentPage.hide();
-    currentPage.next().show();
+    if (pickedOne === true) {
+      var value = parseInt(selectedOption.val());
+      valueAdd(selectedOption, value);
+    };
   });
 
   $(".next-option-button").click(function() {
     // this button hides the current page and shows the next one, for options
+    if (pickedOne === true) {
+      var currentPage = $(this).parent().parent();
+      currentPage.hide();
+      currentPage.next().show();
+      pickedOne = false;
+      console.log("mobile " + mobileTrack);
+      console.log("co size " + companySizeTrack);
+      console.log("frontbackend " + frontbackendTrack);
+      console.log("experience " + experienceTrack);
+    }
+  });
+
+  $(".next-button").click(function() {
+    // this button hides the current page and shows the next one, not for options
     var currentPage = $(this).parent().parent();
     var value = selectedOption.val();
     currentPage.hide();
