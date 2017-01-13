@@ -21,5 +21,8 @@
   4px -4px yellow,
   -4px 4px yellow,
   -4px -4px yellow;
+}
+
+.option-select h3 {
   color: blue;
 }

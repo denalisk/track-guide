@@ -1,3 +1,10 @@
+var valueAdd = function(track, score, newVal) {
+  // adds a value to the score for a given track
+  score += newVal;
+
+}
+
+
 
 
 $(document).ready(function() {
@@ -7,9 +14,8 @@ $(document).ready(function() {
   var prevOption = $(".info-row");
 
   $(".option").click(function() {
-    // this function selects the clicked option and adds its value to the recorded values
+    // this function highlights the clicked option
     selectedOption = $(this);
-    console.log(selectedOption + "  " + prevOption);
     selectedOption.addClass("option-select");
     prevOption.removeClass("option-select");
     prevOption = selectedOption;
@@ -17,8 +23,15 @@ $(document).ready(function() {
   });
 
   $(".next-button").click(function() {
+    // this function adds the selectedOption to the value recorder
+    var value = selectedOption.val();
+    console.log(value);
+  });
+
+  $(".next-button").click(function() {
     // this button hides the current page and shows the next one
     var currentPage = $(this).parent().parent();
+    var value = selectedOption.val();
     currentPage.hide();
     currentPage.next().show();
   });

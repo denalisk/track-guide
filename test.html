@@ -1,29 +1,288 @@
-<div class="page container question-3">
-  <h2>Past Experience</h2>
-  <h3>How much experience do you have with software development?</h3>
-  <div class="row">
-    <div class="multiple-choice">
-      <div class="radio">
-        <label>
-          <input type="radio" name="experience" value="begginer">
-          Begginer
-        </label>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <meta charset="utf-8">
+    <title>Track Picker</title>
+  </head>
+  <body>
+    <div class="page container intro">
+      <div class="jumbotron">
+        <h1>So you want to be a programmer...</h1>
       </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="experience" value="intermediate">
-          Intermediate
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="experience" value="advanced">
-          Advanced
-        </label>
+      <h2>These days, it seems like everyone and their grandmother need in-house developers,</h2>
+      <p>
+        creating a great job market for people with the right skills. You're smart, personable, and a go-getter, so you want a piece of the action. But you don't want to end up as someone's code monkey, chained to a keyboard pounding out menial lines of commands to your computer overlords. When <span class="pop-good">you</span> sell your labor for money, you want to revel in each day's accomplishments and be recognized for <span class="pop-good">your cleverness</span>.
+      </p>
+      <p>
+        Well, put that world-beater nature to work, and use this simple guide to get yourself a bit of the American techno-dream.
+      </p>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
       </div>
     </div>
-  </div>
-  <div class="next-button-container">
-    <button type="button" name="button" class="btn btn-primary next-button">Next</button>
-  </div>
-</div>
+    <div class="page container instructions">
+      <h3>To help you decide which direction in software development might be best for you, choose the answer or idea on each page that best describes you.</h3>
+      <p>
+        You can click the "?" icon beneath each option to get more specifics if you're unsure what the choices mean.
+      </p>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
+      </div>
+    </div>
+
+<!-- start quesiton 1 -->
+
+    <div class="page container question-1">
+      <h2>Past Experience</h2>
+      <h3>How much experience do you have with software development?</h3>
+      <div class="row">
+        <div class="multiple-choice">
+          <div class="radio">
+            <label>
+              <input type="radio" name="experience" value="begginer">
+              Begginer
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="experience" value="intermediate">
+              Intermediate
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="experience" value="advanced">
+              Advanced
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
+      </div>
+    </div>
+
+
+<!-- start quesiton 2 -->
+
+    <div class="page container question-2">
+      <h2>Specialty versus Utility</h2>
+      <h3>What do you prefer?</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <button class="row option btn btn-success" value="generalist">
+            <h3>Jack-of-all-trades, master of none</h3>
+          </button>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                The generalist spreads their knowledge out, without concentrating it in any one place. They may not know the most about any subject, but they know enough about most anything to get the job done.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row option btn btn-success" value="specialist">
+            <h3>Specialist, master at home, stranger away</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                The specialist strives to push the realm of knowledge in their concentration. They are the person that people come to with questions about their specialty, but they likewise must go elsewhere to accomplish things outside their scope.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
+      </div>
+    </div>
+
+<!-- start question 3 -->
+
+    <div class="page container question-3">
+      <h2>Form versus Function</h2>
+      <h3>Which do you value more?</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Function</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                Function, efficiency, a straight-to-the-point approach to life. Who cares if it looks like a hodge-podge skeleton glued together by a bunch of colorblind elves as long as it's faster, stronger, smarter, tougher?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Form</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                Form, grace, simplicity in comprehension. There's no point to making a better mousetrap if it's so cruel and ugly looking that no one wants to use it.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
+      </div>
+    </div>
+
+<!-- start quesiton 4 -->
+
+    <div class="page container question-4">
+      <h2>Work Environment</h2>
+      <h3>What company type suits you best?</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Small, dynamic, in flux</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                Smaller, newer companies still finding their way in the corporate world frequently offer workers diverse and changing responsibilities, as a smaller workforce frequently means that employees must wear many hats.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Large, stable, clearly defined</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                Larger, established companies with needs for developers usually have well-defined dimensions for roles a developer could be hired into, and offer much more stable employment opportunities to the clever and able.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
+      </div>
+    </div>
+
+<!-- start question 5 -->
+
+    <div class="page container question-5">
+      <h2>Relationship with Information</h2>
+      <h3>What do you like to do with valuable informaiton?</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Organize, catalog, and store it</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                All developers work with data and information. An essential component of dealing with data is how it is stored and organized, because no matter how much data you gather, if it's just hoarded in piles in a garage it's almost impossible to use efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Process, arrange, and communicate it</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                Computer programs are only as useful as the information they provide, and presenting that information to other people in a comprehensible manner is critical to making a program that is actually useful.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
+      </div>
+    </div>
+
+<!-- start question 6 -->
+
+    <div class="page container question-6">
+      <h2>Portability versus Capability</h2>
+      <h3>Which characteristic do you value more?</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Portability</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                When it comes down to it, you value the availability of something more than you value it's inherent abilities. If it's not accessible to you when you need it, what's the point?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row option btn btn-success">
+            <h3>Capability</h3>
+          </div>
+          <div class="row info-row">
+            <div class="info-button">
+              <h2>?</h2>
+            </div>
+            <div class="info">
+              <p>
+                Things should be valued based on their immediate utility, and more valuable things are simply more capable, convenience be damned.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="next-button-container">
+        <button type="button" name="button" class="btn btn-primary next-button">Next</button>
+      </div>
+    </div>
+
+<!-- end questions -->
+
+  </body>
+</html>
