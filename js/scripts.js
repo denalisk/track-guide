@@ -1,5 +1,20 @@
+
+
 $(document).ready(function() {
-  $(".question-1").show();
+  $(".question-2").show();
+
+  var selectedOption = "blank";
+  var prevOption = $(".info-row");
+
+  $(".option").click(function() {
+    // this function selects the clicked option and adds its value to the recorded values
+    selectedOption = $(this);
+    console.log(selectedOption + "  " + prevOption);
+    selectedOption.addClass("option-select");
+    prevOption.removeClass("option-select");
+    prevOption = selectedOption;
+
+  });
 
   $(".next-button").click(function() {
     // this button hides the current page and shows the next one

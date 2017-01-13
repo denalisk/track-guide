@@ -14,3 +14,12 @@
 .info-button:hover {
   cursor: pointer;
 }
+
+.option-select {
+  box-shadow:
+  4px 4px yellow,
+  4px -4px yellow,
+  -4px 4px yellow,
+  -4px -4px yellow;
+  color: blue;
+}
