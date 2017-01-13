@@ -29,13 +29,26 @@ $(document).ready(function() {
   var selectedOption = "blank";
   var prevOption = $(".info-row");
 
+  $(".question-1").submit(function(event) {
+    // this function opens the next page from the radio button page
+    event.preventDefault();
+    selectedOption = $("input:radio[name=experience]:checked");
+    var value = parseInt(selectedOption.val());
+    valueAdd(selectedOption, value);
+    var currentPage = $(this);
+    console.log(currentPage);
+    currentPage.hide();
+    currentPage.next().show();
+    console.log("experience " + experienceTrack);
+  });
+
+
   $(".option").click(function() {
     // this function highlights the clicked option
     selectedOption = $(this);
     selectedOption.addClass("option-select");
     prevOption.removeClass("option-select");
     prevOption = selectedOption;
-
   });
 
   $(".next-option-button").click(function() {
