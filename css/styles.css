@@ -2,8 +2,25 @@
   display: none;
 }
 
+.centered {
+  text-align: center;
+}
+
 .info {
   display: none;
+  height: 125px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-right: 30px;
+  margin-top: 30px;
+  border-radius: 4%;
+  background: gray;
+}
+
+.info-hover {
+  padding-top: 15px;
+  margin-top: 30px;
 }
 
 .info-button {
@@ -15,8 +32,30 @@
   cursor: pointer;
 }
 
+.instructions {
+  font-size: 25px;
+}
+
+.intro-content {
+  margin-left: 200px;
+}
+
+.main {
+  background: darkblue;
+  color: black;
+  text-shadow: 1px 1px gray,
+  1px -1px gray;
+  box-shadow: 4px 4px gray;
+}
+
 .next-option-button, .next-radio {
   margin-top: 5em;
+}
+
+.option {
+  align-self: center;
+  width: 100%;
+  height: 100px;
 }
 
 .option-select {
@@ -29,4 +68,32 @@
 
 .option-select h3 {
   color: blue;
+}
+
+.page {
+  margin-top: 100px;
+}
+
+.pop-good {
+  color: blue;
+  font-weight: bold;
+}
+
+.radio {
+  margin-left: 40px;
+}
+
+.sidle {
+  margin-left: 50px;
+}
+
+.some-shadow {
+  text-shadow:
+  1px 1px darkblue,
+  -1px 1px darkblue,
+  1px -1px darkblue,
+  -1px -1px darkblue;
+}
+
+.title-block {
 }

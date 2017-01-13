@@ -21,7 +21,7 @@ var companySizeTrack = 0;
 var experienceTrack = 0;
 
 $(document).ready(function() {
-  $(".question-2").show();
+  $(".question-6").show();
 
   var selectedOption = "placeholder";
   var prevOption = $(".info-row");
@@ -61,6 +61,7 @@ $(document).ready(function() {
   $(".next-option-button").click(function() {
     // this button hides the current page and shows the next one, for options
     if (pickedOne === true) {
+      var value = selectedOption.val();
       var currentPage = $(this).parent().parent();
       currentPage.hide();
       currentPage.next().show();
@@ -75,7 +76,6 @@ $(document).ready(function() {
   $(".next-button").click(function() {
     // this button hides the current page and shows the next one, not for options
     var currentPage = $(this).parent().parent();
-    var value = selectedOption.val();
     currentPage.hide();
     currentPage.next().show();
   });
