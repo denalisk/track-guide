@@ -1,3 +1,9 @@
+var mobileTrack = 0;
+var frontbackendTrack = 0;
+var companySizeTrack = 0;
+var experienceTrack = 0;
+
+
 var valueAdd = function(selectedOption, value) {
   // adds a value to the score for a given track
   if ($(selectedOption).hasClass("frontbackend")) {
@@ -15,10 +21,16 @@ var valueAdd = function(selectedOption, value) {
 
 };
 
-var mobileTrack = 0;
-var frontbackendTrack = 0;
-var companySizeTrack = 0;
-var experienceTrack = 0;
+var showLastPage = function() {
+  if (frontbackendTrack > 0) {
+    frontbackendResults =
+  }
+}
+
+
+
+
+
 
 $(document).ready(function() {
   $(".question-6").show();
@@ -39,7 +51,6 @@ $(document).ready(function() {
     currentPage.next().show();
     console.log("experience " + experienceTrack);
   });
-
 
   $(".option").click(function() {
     // this function highlights the clicked option
@@ -92,5 +103,7 @@ $(document).ready(function() {
     $(this).hide();
     $(this).prev().show();
   });
+
+  $()
 
 });
