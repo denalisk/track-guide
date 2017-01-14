@@ -1,7 +1,12 @@
+// BEGIN BACK END
 var mobileTrack = 0;
 var frontbackendTrack = 0;
 var companySizeTrack = 0;
 var experienceTrack = 0;
+
+var frontbackendResults = "";
+var companySizeLanguages = "";
+var companySizeResults = "";
 
 
 var valueAdd = function(selectedOption, value) {
@@ -18,22 +23,47 @@ var valueAdd = function(selectedOption, value) {
   else {
     experienceTrack += value;
   }
-
 };
 
 var showLastPage = function() {
+  // goes over the values returned throughout the survey and chooses what elements of the last page to display
   if (frontbackendTrack > 0) {
-    frontbackendResults =
+    frontbackendResults = "backend";
   }
-}
+  else if (frontbackendTrack === 0) {
+    frontbackendResults = "full stack";
+  }
+  else if (frontbackendTrack < 0) {
+    frontbackendResults = "frontend";
+  };
+
+  if (experienceTrack > 0) {
+    $(".experienceResults1").show();
+  }
+  else if (experienceTrack === 0) {
+    $(".experienceResults0").show();
+  }
+  else if (experienceTrack < 0) {
+    $(".experienceResults-1").show();
+    if (frontbackendTrack > 0) {
+      $("experienceResults-1-backend").show();
+    }
+    else {
+      $("experienceResults-1-frontend").show();
+    };
+  };
+  if (mobileTrack === 1) {
+    $("mobileResults1").show();
+  }
+};
 
 
 
-
+// BEGIN FRONT END
 
 
 $(document).ready(function() {
-  $(".question-6").show();
+  $(".intro").show();
 
   var selectedOption = "placeholder";
   var prevOption = $(".info-row");
@@ -72,7 +102,6 @@ $(document).ready(function() {
   $(".next-option-button").click(function() {
     // this button hides the current page and shows the next one, for options
     if (pickedOne === true) {
-      var value = selectedOption.val();
       var currentPage = $(this).parent().parent();
       currentPage.hide();
       currentPage.next().show();
@@ -81,7 +110,7 @@ $(document).ready(function() {
       console.log("co size " + companySizeTrack);
       console.log("frontbackend " + frontbackendTrack);
       console.log("experience " + experienceTrack);
-    }
+    };
   });
 
   $(".next-button").click(function() {
@@ -89,6 +118,73 @@ $(document).ready(function() {
     var currentPage = $(this).parent().parent();
     currentPage.hide();
     currentPage.next().show();
+  });
+
+  $(".final-button").click(function() {
+    // this button displays the final page, with differing elements depending on what values were returned
+    if (pickedOne === true) {
+      var value = parseInt(selectedOption.val());
+      valueAdd(selectedOption, value);
+      var currentPage = $(this).parent().parent();
+      currentPage.hide();
+      currentPage.next().show();
+      currentPage.next().find(".result-p").hide();
+      console.log("last button!");
+      console.log("mobile " + mobileTrack);
+      console.log("co size " + companySizeTrack);
+      console.log("frontbackend " + frontbackendTrack);
+      console.log("experience " + experienceTrack);
+      if (frontbackendTrack > 0) {
+        frontbackendResults = "backend";
+        $(".frontbackendResults").text(frontbackendResults);
+        console.log(frontbackendResults);
+      }
+      else if (frontbackendTrack === 0) {
+        frontbackendResults = "full stack";
+        $(".frontbackendResults").text(frontbackendResults);
+        console.log(frontbackendResults);
+      }
+      else if (frontbackendTrack < 0) {
+        frontbackendResults = "frontend";
+        $(".frontbackendResults").text(frontbackendResults);
+        console.log(frontbackendResults);
+      };
+
+      if (experienceTrack > 0) {
+        $(".experienceResults1").show();
+      }
+      else if (experienceTrack === 0) {
+        $(".experienceResults0").show();
+      }
+      else if (experienceTrack < 0) {
+        $(".experienceResults-1").show();
+        if (frontbackendTrack > 0) {
+          $(".experienceResults-1-backend").show();
+        }
+        else {
+          $(".experienceResults-1-frontend").show();
+        };
+      };
+      if (mobileTrack === 1) {
+        $(".mobileResults1").show();
+      }
+      if (companySizeResults > 0) {
+        $(".companySizeLanguages").text("C#, .NET, or Java,");
+        $(".companySizeResults").text("bigger");
+      }
+      else if (companySizeResults < 0) {
+        $(".companySizeLanguages").text("Python, Ruby, or PHP,");
+        $(".companySizeResults").text("smaller");
+      }
+      else {
+        $(".companySizeLanguages").text("Python, Ruby, or PHP,");
+        $(".companySizeResults").text("medium-sized");
+      }
+    }
+    else {
+      console.log("something's wrong");
+      pickedOne = false;
+    };
   });
 
   $(".info-button").mouseenter(function() {
@@ -104,6 +200,10 @@ $(document).ready(function() {
     $(this).prev().show();
   });
 
-  $()
+  $(".start-over-button").click(function() {
+    // takes the user back to the first page
+    $(this).parent().parent().hide();
+    location.reload();
+  })
 
 });
